@@ -1,0 +1,12 @@
+config {
+    type: "table",
+    name: "most_prolofic director",
+    description: "most popular genre",
+    columns: {
+        Director: "director name",
+        num_of_movie: "number of movie"
+    }
+}
+
+SELECT Director, count(movie_name) AS num_of_movie FROM ${ref("movies_view_2")}
+GROUP BY Director ORDER BY num_of_movie DESC LIMIT 1 

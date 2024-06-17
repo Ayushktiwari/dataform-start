@@ -1,0 +1,17 @@
+config {
+    type: "table",
+    name: "top_rated_movie",
+    description: "movie having top rating",
+    columns: {
+        movie_name: "title of the movie",
+        IMDB_Rating: "rating of the movie",
+        Genre: "genre of the movie",
+        cast_names: "cast name",
+        Release_Year: "release year",
+        Director: "director name"
+    }
+}
+
+
+SELECT * FROM ${ref("movies_view_2")}
+where IMDB_Rating = (select max(IMDB_Rating) from ${ref("movies_view_2")})

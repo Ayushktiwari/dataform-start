@@ -1,0 +1,13 @@
+config {
+    type: "table",
+    name: "most_popular_genre",
+    description: "most popular genre",
+    columns: {
+        Genre: "genre of the movie",
+        genre_count: "genre count"
+    }
+}
+
+
+SELECT Genre, count(*) AS genre_count FROM ${ref("movies_view_2")} 
+GROUP BY Genre ORDER BY genre_count DESC LIMIT 1

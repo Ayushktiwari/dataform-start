@@ -1,0 +1,5 @@
+defaultProject: getting-started-with-bq-425309
+defaultLocation: US
+defaultDataset: imdb_dataset
+defaultAssertionDataset: dataform_assertions
+dataformCoreVersion: 3.0.0-beta.4
