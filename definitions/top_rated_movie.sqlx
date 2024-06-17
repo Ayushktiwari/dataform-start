@@ -13,5 +13,5 @@ config {
 }
 
 
-SELECT * FROM ${ref("movies_view_2")}
-where IMDB_Rating = (select max(IMDB_Rating) from ${ref("movies_view_2")})
+SELECT * FROM ${ref("movies_view2")}
+where IMDB_Rating = (select max(IMDB_Rating) from ${ref("movies_view2")})

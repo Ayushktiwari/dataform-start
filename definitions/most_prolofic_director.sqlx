@@ -8,5 +8,5 @@ config {
     }
 }
 
-SELECT Director, count(movie_name) AS num_of_movie FROM ${ref("movies_view_2")}
+SELECT Director, count(movie_name) AS num_of_movie FROM ${ref("movies_view2")}
 GROUP BY Director ORDER BY num_of_movie DESC LIMIT 1 
