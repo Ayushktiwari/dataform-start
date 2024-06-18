@@ -7,18 +7,24 @@ config {
         IMDB_Rating: "rating of the movie",
         Genre: "genre of the movie",
         cast_names: "cast name",
-        Release_Year: "release year",
+        Released_Year: "release year",
         Director: "director name"
     }
 }
 
 CREATE VIEW imdb_dataset.movies_view2
-(movie_name, IMDB_Rating, Genre, cast_names, Release_Year, Director)
+(movie_name, IMDB_Rating, Genre, cast_names, Released_Year, Director)
  AS 
- SELECT md.movie_name, md.IMDB_Rating, md.Genre, md.cast_names, imd.Released_Year,
- imd.Director from imdb_dataset.movies_details2 as md 
- INNER JOIN imdb_dataset.imdb_details
- as imd on md.movie_name = imd.movie_name and md.Genre = imd.Genre
+ SELECT movie_name, IMDB_Rating, Genre, cast_names, Released_Year,
+ Director from ${ref("movies_details2")} 
+
+-- CREATE VIEW imdb_dataset.movies_view2
+-- (movie_name, IMDB_Rating, Genre, cast_names, Release_Year, Director)
+--  AS 
+--  SELECT md.movie_name, md.IMDB_Rating, md.Genre, md.cast_names, imd.Released_Year,
+--  imd.Director from imdb_dataset.movies_details2 as md 
+--  INNER JOIN imdb_dataset.imdb_details
+--  as imd on md.movie_name = imd.movie_name and md.Genre = imd.Genre
 
 
 

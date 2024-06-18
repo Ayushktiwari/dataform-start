@@ -6,12 +6,14 @@ config {
         movie_name: "title of the movie",
         IMDB_Rating: "rating of the movie",
         Genre: "genre of the movie",
-        cast_names: "cast name"
+        cast_names: "cast name",
+        Released_Year: "release year",
+        Director: "director name"
     }
 }
 
 
  SELECT movie_name, IMDB_Rating, Genre,
- CONCAT(Star1, ',', Star2, ',', Star3, ',', Star4) AS cast_names
+ CONCAT(Star1, ',', Star2, ',', Star3, ',', Star4) AS cast_names, Released_Year, Director
  from imdb_dataset.imdb_details  
 
